@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hah?? Gatau wee</title>
+   <style>
+       * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.message {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.heart-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.heart {
+    width: 100px;
+    height: 90px;
+    background-color: red;
+    position: relative;
+    transform: rotate(-45deg);
+    animation: beat 1s infinite;
+    cursor: pointer;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart::after {
+    left: 50px;
+    top: 0;
+}
+
+@keyframes beat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.popup {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+}
+
+.popup-message {
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.close-btn:hover {
+    background-color: darkred;
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 2em;
+    }
+
+    .message {
+        font-size: 1em;
+    }
+}
+   </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">For My Love</h1>
+        <p class="message">Please open this message from me, okay?</p>
+        <p class="message">klik aja gambar dibawah ini, trus baca baru klik lanjut.....</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <div class="heart-container">
+            <div class="heart" id="heart"></div>
+        </div>
+        <a href="https://wa.me/628881810626?text=Hayy">
+            <button>
+                Lanjutkan....
+            </button>
+        </a>
+        <div class="popup" id="popup">
+            <p class="popup-message" id="popupMessage">Khaii.... jujur ya awal kenal kayak biasa aja tapi sejak yg rumor waktu itu jadi betulan ada perasaan. Aku paham itu, tapi disini jujur aku mau nanya boleh ga ?? eh ya harus boleh sih :)</p>
+            <p class="popup-message" id="popupMessage">Mau ngga pacaran ??</p>
+            <p class="popup-message" id="popupMessage">🙂ku menantikan jawaananmu🙂</p>
+            <button class="close-btn" id="closeBtn">Close</button>
+        </div>
+    </div>
+
+    <script>
+        const heart = document.getElementById('heart');
+const popup = document.getElementById('popup');
+const closeBtn = document.getElementById('closeBtn');
+
+heart.addEventListener('click', function() {
+    popup.style.display = 'block';
+});
+
+closeBtn.addEventListener('click', function() {
+    popup.style.display = 'none';
+});
+    </script>
+</body>
+</html>
